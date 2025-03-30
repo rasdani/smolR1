@@ -1,5 +1,8 @@
 # smolR1
 
+<img src="assets/logo.png" width="400">
+
+
 
 Create a virtual enviroment and install with `pip install -r requirements.txt`.
 
