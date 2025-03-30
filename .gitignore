@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+wandb/
+outputs/
+
+# personal Docker setup
+docker-compose.yaml
+Dockerfile

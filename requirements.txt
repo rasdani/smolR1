@@ -1,0 +1,8 @@
+trl[peft]==0.16.0
+vllm>=0.7.3
+deepspeed
+accelerate
+wandb
+word2number
+math-verify[antlr4_11_0]==0.6.0
+liger-kernel
