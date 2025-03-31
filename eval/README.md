@@ -3,7 +3,9 @@
 adapted from https://github.com/QwenLM/Qwen2.5-Math
 
 ```bash
-# if this conflicts with existing dependencies, install in seperate environment
+# install in seperate environment
+
+# simpleRL instructions
 cd examples/simplelr_math_eval
 pip uninstall latex2sympy2 -y
 cd latex2sympy
@@ -15,7 +17,15 @@ pip install timeout-decorator
 pip install jieba
 cd ..
 
+# official Qwen2.5 Math instructions
+cd latex2sympy
+pip install -e .
+cd ..
+pip install -r requirements.txt 
+pip install vllm==0.5.1 --no-build-isolation
+pip install transformers==4.42.3
 
-# example usage: bash eval_math.sh --run_name verl-grpo-fix-math-eval-large-reward_temp1.0_ppomicro4_Qwen2.5-14B_simplelr_math_35 --init_model Qwen2.5-14B --template qwen25-math-cot  --tp_size 1
+
+bash sh/eval_simple.sh
 
 ```
