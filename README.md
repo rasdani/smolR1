@@ -15,15 +15,18 @@ pip install -r requirements.txt
 
 For a two GPU setup, start vLLM first.
 
-```
+```bash
 CUDA_VISIBLE_DEVICES=1 trl vllm-serve --model Qwen/Qwen2.5-0.5B
 ```
 
 Then run training with
 
-```
+```bash
 accelerate launch --config_file configs/deepspeed/zero3.yaml --num_processes 1 train.py
 ```
+
+## Evaluation
+Follow instructions in [`eval/README.md`](eval/README.md).
 
 ## Acknowledegments
 
