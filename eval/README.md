@@ -31,6 +31,10 @@ bash sh/eval_simple.sh
 
 ```
 
-simpleRL-Zoo eval code seems broken.
+simpleRL-Zoo eval code is broken for me.
 
 I measured with official Qwen Math repo and will port it over soon.
+
+### Preliminary Results
+
+<img src="../assets/benchmarks.png" width="800">
