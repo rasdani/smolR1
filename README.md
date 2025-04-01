@@ -28,6 +28,9 @@ accelerate launch --config_file configs/deepspeed/zero3.yaml --num_processes 1 t
 ## Evaluation
 Follow instructions in [`eval/README.md`](eval/README.md).
 
+## Training Plots
+<img src="assets/plots.png" width="800">
+
 ## Acknowledegments
 
 [simpleRL-Zoo](https://github.com/hkust-nlp/simpleRL-reason)
