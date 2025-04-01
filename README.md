@@ -3,6 +3,8 @@
 <img src="assets/logo.png" width="400">
 
 
+reproducing DeepSeek R1 Zero with Qwen2.5-0.5B on two 4090 GPUs
+
 
 ## Setup
 Create a virtual enviroment and install dependencies with 
