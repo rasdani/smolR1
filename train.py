@@ -3,7 +3,6 @@ import os
 from trl import GRPOTrainer, GRPOConfig
 from transformers import AutoModelForCausalLM
 from datasets import load_dataset
-from peft import LoraConfig
 from liger_kernel.transformers import AutoLigerKernelForCausalLM # type: ignore
 
 from reward import compute_score
@@ -33,21 +32,6 @@ num_gpus = 2
 per_device_train_batch_size = 8
 run_name = "simple_rl_zoo_" + model_name.split("/")[-1].lower()
 
-# peft_config = LoraConfig(
-#     # r=32,
-#     r=16,
-#     # r=8,
-#     lora_alpha=32,
-#     # lora_alpha=16,
-#     # lora_alpha=8,
-#     # lora_dropout=0.05,
-#     lora_dropout=0.0,
-#     # target_modules=["q_proj", "k_proj", "v_proj"]
-#     target_modules = [
-#         "q_proj", "k_proj", "v_proj", "o_proj",
-#         "gate_proj", "up_proj", "down_proj",
-#     ] # Remove QKVO if out of memory
-# )
 
 training_args = GRPOConfig(
     output_dir=f"outputs/{run_name}",
