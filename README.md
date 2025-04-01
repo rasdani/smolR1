@@ -9,7 +9,7 @@ reproducing DeepSeek R1 Zero with Qwen2.5-0.5B on two 4090 GPUs
 <img src="assets/plots.png" width="800">
 
 ## Setup
-Create a virtual enviroment and install dependencies with 
+Create a virtual environment and install dependencies with 
 ```bash
 pip install -r requirements.txt
 ```
