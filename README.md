@@ -5,6 +5,8 @@
 
 reproducing DeepSeek R1 Zero with Qwen2.5-0.5B on two 4090 GPUs
 
+## Training Plots
+<img src="assets/plots.png" width="800">
 
 ## Setup
 Create a virtual enviroment and install dependencies with 
@@ -27,9 +29,6 @@ accelerate launch --config_file configs/deepspeed/zero3.yaml --num_processes 1 t
 
 ## Evaluation
 Follow instructions in [`eval/README.md`](eval/README.md).
-
-## Training Plots
-<img src="assets/plots.png" width="800">
 
 ## Acknowledegments
 
