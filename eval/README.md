@@ -1,6 +1,7 @@
 # Qwen2.5 Math Evaluation
 
-adapted from https://github.com/QwenLM/Qwen2.5-Math
+adapted from https://github.com/hkust-nlp/simpleRL-reason
+who adapted from https://github.com/QwenLM/Qwen2.5-Math
 
 ```bash
 # install in seperate environment
@@ -29,3 +30,7 @@ pip install transformers==4.42.3
 bash sh/eval_simple.sh
 
 ```
+
+simpleRL-Zoo eval code seems broken.
+
+I measured with official Qwen Math repo and will port it over soon.

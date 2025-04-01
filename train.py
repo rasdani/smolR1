@@ -63,9 +63,9 @@ training_args = GRPOConfig(
     # max_completion_length=4096,
     # max_completion_length=3072,
     # max_completion_length=2560,
-    max_completion_length=2048,
+    # max_completion_length=2048,
     # max_completion_length=1024,
-    # max_completion_length=1536,
+    max_completion_length=1536,
     temperature=1.0,
     # per_device_train_batch_size=4,
     # per_device_train_batch_size=32,
@@ -104,7 +104,6 @@ trainer = GRPOTrainer(
     args=training_args,
     reward_funcs=reward_func,
     train_dataset=train_dataset,
-    # eval_dataset=eval_dataset,
 )
 
 trainer.train()
