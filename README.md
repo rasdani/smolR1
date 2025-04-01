@@ -23,7 +23,7 @@ Then run training with
 accelerate launch --config_file configs/deepspeed/zero3.yaml --num_processes 1 train.py
 ```
 
-## Acknowledgments
+## Acknowledegments
 
 [simpleRL-Zoo](https://github.com/hkust-nlp/simpleRL-reason)
 
