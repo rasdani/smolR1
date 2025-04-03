@@ -176,6 +176,3 @@ cython_debug/
 wandb/
 outputs/
 
-# personal Docker setup
-docker-compose.yaml
-Dockerfile

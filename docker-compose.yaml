@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  open-r1:
+    image: open-r1-open-r1  # Use the existing image
+    volumes:
+      - .:/workspace/smolR1/  # Mount current directory to /workspace/open-r1/
+      - ~/.cache/huggingface/:/root/.cache/huggingface/
+    environment:
+      - HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    command: tail -f /dev/null
+    restart: unless-stopped
+    shm_size: '16gb'
+    ulimits:
+      memlock: -1
+      stack: 67108864
