@@ -45,22 +45,6 @@ ARG CUDA="124"
 ARG TORCH_CUDA_ARCH_LIST="7.0 7.5 8.0 8.6 9.0+PTX"
 ENV TORCH_CUDA_ARCH_LIST=${TORCH_CUDA_ARCH_LIST}
 
-# Install PyTorch
-# RUN python -m pip install --upgrade pip && \
-#     python -m pip install --no-cache-dir torch==${PYTORCH_VERSION} --index-url https://download.pytorch.org/whl/cu${CUDA}
-
-# Install vLLM and Flash Attention
-# RUN python -m pip install vllm==0.7.2 && \
-#     python -m pip install setuptools && \
-#     python -m pip install flash-attn --no-build-isolation
-
-# # Copy project files
-# COPY . /workspace/open-r1/
-# WORKDIR /workspace/open-r1
-
-# Install project dependencies
-RUN GIT_LFS_SKIP_SMUDGE=1 python -m pip install -e ".[dev,code]"
-
 # Create directories for cache and data
 RUN mkdir -p /root/.cache/huggingface
 # RUN mkdir -p /workspace/open-r1/data

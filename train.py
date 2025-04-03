@@ -21,7 +21,7 @@ def calc_gradient_accumulation_steps(num_gpus, per_device_train_batch_size, targ
     print(f"Gradient accumulation steps: {ret}")
     return ret
 
-model_name = "Qwen/Qwen2.5-0.5B"
+model_name = "Qwen2.5-0.5B-simpleRL-Zoo-8192k"
 model = AutoModelForCausalLM.from_pretrained(model_name)
 # model = AutoLigerKernelForCausalLM.from_pretrained(model_name)
 
@@ -29,8 +29,10 @@ train_dataset = load_dataset("rasdani/simplerl_qwen_level1to4", split="train")
 
 num_gpus = 2
 # per_device_train_batch_size = 4
-per_device_train_batch_size = 8
-run_name = "simple_rl_zoo_" + model_name.split("/")[-1].lower()
+# per_device_train_batch_size = 8
+per_device_train_batch_size = 256
+# run_name = "simple_rl_zoo_" + model_name.split("/")[-1].lower()
+run_name = "Qwen2.5-0.5B"
 
 
 training_args = GRPOConfig(
@@ -43,13 +45,13 @@ training_args = GRPOConfig(
     num_iterations=1,
     beta=0.0001,
     max_prompt_length=1024,
-    # max_completion_length=8192,
+    max_completion_length=8192,
     # max_completion_length=4096,
     # max_completion_length=3072,
     # max_completion_length=2560,
     # max_completion_length=2048,
     # max_completion_length=1024,
-    max_completion_length=1536,
+    # max_completion_length=1536,
     temperature=1.0,
     # per_device_train_batch_size=4,
     # per_device_train_batch_size=32,
@@ -65,7 +67,7 @@ training_args = GRPOConfig(
     # ),
     # gradient_accumulation_steps=2,
     # gradient_accumulation_steps=16,
-    gradient_accumulation_steps=256,
+    # gradient_accumulation_steps=256,
     gradient_checkpointing=True,
     save_strategy="steps",
     save_steps=12,

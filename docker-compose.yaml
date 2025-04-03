@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   open-r1:
-    image: open-r1-open-r1  # Use the existing image
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/workspace/smolR1/  # Mount current directory to /workspace/open-r1/
       - ~/.cache/huggingface/:/root/.cache/huggingface/
