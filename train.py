@@ -21,7 +21,7 @@ def calc_gradient_accumulation_steps(num_gpus, per_device_train_batch_size, targ
     print(f"Gradient accumulation steps: {ret}")
     return ret
 
-model_name = "Qwen2.5-0.5B-simpleRL-Zoo-8192k"
+model_name = "Qwen/Qwen2.5-0.5B"
 model = AutoModelForCausalLM.from_pretrained(model_name)
 # model = AutoLigerKernelForCausalLM.from_pretrained(model_name)
 
@@ -32,7 +32,7 @@ num_gpus = 2
 # per_device_train_batch_size = 8
 per_device_train_batch_size = 256
 # run_name = "simple_rl_zoo_" + model_name.split("/")[-1].lower()
-run_name = "Qwen2.5-0.5B"
+run_name = "Qwen2.5-0.5B-simpleRL-Zoo-8192k"
 
 
 training_args = GRPOConfig(
